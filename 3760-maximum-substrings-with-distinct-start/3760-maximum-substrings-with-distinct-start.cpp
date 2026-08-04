@@ -3,12 +3,17 @@ public:
     int maxDistinct(string s) {
         int n = s.size();
 
-        set<int> st;
+        vector<int> hash(26, 0);
         for(int i=0; i<n; ++i) {
-            st.insert(s[i]);
+            hash[s[i]-97] ++;
         }
 
-        return st.size();
+        int dis_ele = 0;
+        for(auto &ele : hash) {
+            if(ele > 0) dis_ele ++;
+        }
+
+        return dis_ele;
     }
 };
 
