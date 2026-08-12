@@ -1,20 +1,18 @@
 class Solution {
 public:
     vector<int> twoSum(vector<int>& numbers, int target) {
-        int left = 0, right = numbers.size()-1;
+        int n = numbers.size();
 
-        while(left < right) {
-            int sum = numbers[left] + numbers[right];
+        unordered_map<int, int> mpp;
 
-            if(sum == target) {
-                return {left + 1, right + 1};
+        for(int i=0; i<n; ++i) {
+            int req_num = target - numbers[i];
+
+            if(mpp.find(req_num) != mpp.end()) {
+                return {mpp[req_num] + 1, i + 1};
             }
-            else if(sum > target) {
-                right --;
-            }
-            else {
-                left ++;
-            }
+
+            mpp[numbers[i]] = i;
         }
 
         return {-1, -1};
