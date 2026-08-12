@@ -1,6 +1,10 @@
 class Solution {
 public:
     void reverseString(vector<char>& s) {
+
+        // we can use swapping technique.
+        // make 2 ponter left and right and while(left < right) swap and move.
+        
         reverse(s.begin(), s.end());
 
         for(auto &ele : s) {
