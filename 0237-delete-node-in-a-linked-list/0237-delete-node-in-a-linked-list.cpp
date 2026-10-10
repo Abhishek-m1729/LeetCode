@@ -6,14 +6,13 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
- struct ListNode *first = NULL;
 class Solution {
 public:
     void deleteNode(ListNode* node) {
-       ListNode *p = node->next;
-       swap(p->val, node->val);
-       node->next = p->next;
-       delete p;
+        ListNode *p = node->next;
+        swap(p->val, node->val);
+        node->next = p->next;
+        delete p;
     }
 };
 
