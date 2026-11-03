@@ -1,0 +1,5 @@
+#include <bits/stdc++.h>#define endl '\n'using ll = long long;using namespace std; int Digits(ll n){	if(n / 10 == 0 && n / 10 != 1) return 1;	if(n / 100 == 0 && n / 100 != 1) return 2;	if(n / 1000 == 0 && n / 1000 != 1) return 3;	if(n / 10000 == 0 && n / 10000 != 1) return 4;	if(n / 100000 == 0 && n / 100000 != 1) return 5;	if(n / 1000000 == 0 && n / 1000000 != 1) return 6;	return -1;} void solution(){	ll n;	cin >> n; 	if(Digits(n) == 1) cout << n << endl;	else if(Digits(n) == 2) cout << 10 + (n/10) - 1 << endl;	else if(Digits(n) == 3) cout << 19 + (n/100) - 1 << endl;	else if(Digits(n) == 4) cout << 28 + (n/1000) - 1 << endl;	else if(Digits(n) == 5) cout << 37 + (n/10000) - 1 << endl;	else if(Digits(n) == 6) cout <<46 + (n/100000) - 1 << endl;} int main(){	ios::sync_with_stdio(false);	cin.tie(nullptr);	cout.tie(nullptr); 	int t;	cin >> t; 	while(t --) solution(); 	return 0;}
+
+// Synced seamlessly with LeetHub Pro
+// Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
+// Get it here: https://chromewebstore.google.com/detail/bcilpkkbokcopmabingnndookdogmbna
